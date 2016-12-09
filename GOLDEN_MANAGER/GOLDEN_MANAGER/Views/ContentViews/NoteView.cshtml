@@ -1,0 +1,30 @@
+﻿
+@using GOLDEN_MANAGER.Models
+@model IEnumerable<Note>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNoteModal">New Note</button>
+
+<table class="table table-bordered table-tasks">
+    <thead>
+        <tr>
+            <th>Node ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Priority</th>
+            <th>Group</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var noteItem in Model)
+        {
+            <tr>
+                <td>@noteItem.note_id</td>
+                <td>@noteItem.note_name</td>
+                <td>@noteItem.note_description</td>
+                <td>@noteItem.note_priority</td>
+                <td>@noteItem.group_notes_id</td>
+            </tr>
+        }
+    </tbody>
+</table>

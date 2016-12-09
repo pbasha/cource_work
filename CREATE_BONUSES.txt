@@ -1,0 +1,16 @@
+CREATE TABLE public.bonuses
+(
+    bonus_id serial NOT NULL,
+    bonus_name character varying NOT NULL,
+    bonus_description character varying,
+    bonus_pma smallint,
+    user_id smallint NOT NULL,
+    PRIMARY KEY (bonus_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.bonuses
+    OWNER to postgres;

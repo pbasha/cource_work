@@ -1,0 +1,29 @@
+﻿@using GOLDEN_MANAGER.Models
+@model IEnumerable<GOLDEN_MANAGER.Models.Task>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTaskModal">New Task</button>
+
+<table class="table table-bordered table-tasks">
+    <thead>
+        <tr>
+            <th>Task ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Priority</th>
+            <th>Points for achive</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var taskItem in Model)
+        {
+            <tr>
+                <td>@taskItem.task_id</td>
+                <td>@taskItem.task_name</td>
+                <td>@taskItem.task_description</td>
+                <td>@taskItem.task_priority</td>
+                <td>@taskItem.task_achiv_points</td>
+            </tr>
+        }
+    </tbody>
+</table>

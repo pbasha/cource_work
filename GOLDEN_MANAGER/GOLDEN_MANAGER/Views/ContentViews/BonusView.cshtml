@@ -1,0 +1,27 @@
+﻿@using GOLDEN_MANAGER.Models
+@model IEnumerable<Bonus>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addBonusModal">New Bonus</button>
+
+<table class="table table-bordered table-tasks">
+    <thead>
+        <tr>
+            <th>Bonus ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Points for achive</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var bonusItem in Model)
+        {
+            <tr>
+                <td>@bonusItem.bonus_id</td>
+                <td>@bonusItem.bonus_name</td>
+                <td>@bonusItem.bonus_description</td>
+                <td>@bonusItem.bonus_points_must_achieve</td>
+            </tr>
+        }
+    </tbody>
+</table>

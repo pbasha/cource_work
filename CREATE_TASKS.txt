@@ -1,0 +1,17 @@
+CREATE TABLE public.tasks
+(
+    task_id serial NOT NULL,
+    task_name character varying NOT NULL,
+    task_priority smallint,
+    task_achive_points smallint,
+    task_description character varying,
+    user_id integer NOT NULL,
+    PRIMARY KEY (task_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.tasks
+    OWNER to postgres;
