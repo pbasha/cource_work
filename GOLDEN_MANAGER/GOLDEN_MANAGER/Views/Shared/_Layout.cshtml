@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using GOLDEN_MANAGER.Models
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
     
@@ -18,10 +18,27 @@
     <script src="~/Scripts/MicrosoftMvcAjax.debug.js"></script>
     <script src="~/Scripts/MicrosoftMvcAjax.js"></script>
 
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="~/scripts/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="~/Content/_bootstrap-datetimepicker.less" />
+    <link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+
     @RenderSection("Scripts")
 
 </head>
 <body>
+
+    @Html.Partial("~/Views/ModalForms/_partialSkillCreateForm.cshtml", model: new Skill())
+    @Html.Partial("~/Views/ModalForms/_partialTaskCreateForm.cshtml", model: new Task())
+    @Html.Partial("~/Views/ModalForms/_partialBonusCreateForm.cshtml", model: new Bonus())
+    @Html.Partial("~/Views/ModalForms/_partialNoteCreateForm.cshtml", model: new Note())
+    @Html.Partial("~/Views/ModalForms/_partialUserCreateForm.cshtml", model: new User())
+    @Html.Partial("~/Views/ModalForms/_partialUserLoginForm.cshtml", model: new User())
+    @Html.Partial("~/Views/ModalForms/_partialDayCreateForm.cshtml", model: new Day())
+    @Html.Partial("~/Views/ModalForms/_partialMotivationCreateForm.cshtml", model: new Motivation())
+
+    @Html.Partial("~/Views/ModalForms/_partialDeleteTask.cshtml", model: new Task())
 
     @RenderSection("Body")
   

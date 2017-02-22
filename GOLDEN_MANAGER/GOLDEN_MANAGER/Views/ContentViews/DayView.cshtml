@@ -1,0 +1,40 @@
+﻿@using GOLDEN_MANAGER.Models
+@model IEnumerable<Day>
+
+
+<div class="right-container">
+    <div class="well well-lg my-well-container">
+
+        <button type="button" class="btn btn-primary my-left-btn my-string string-btn" data-toggle="modal" data-target="#addDayModal">Create a new workday</button>
+
+
+        @foreach (var dayItem in Model)
+        {
+            <div class="panel panel-primary my-panel-for-progress">
+                <div class="panel-heading my-string string-btn">@dayItem.day_name</div>
+                <div class="panel-body">
+                    
+                    <div class="horizontal_container" style="margin-bottom: 10px">
+                        <div class="right my-string my-table-string" >
+                            @dayItem.day_date
+                        </div>
+                        <div class="left my-string my-table-string">
+                            Date:
+                        </div>
+                    </div>
+
+                    <div class="horizontal_container">
+                        <div class="right my-string my-table-string">
+                            @dayItem.day_description
+                        </div>
+                        <div class="left my-string my-table-string">
+                            Description:
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

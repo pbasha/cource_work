@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("GOLDEN_MANAGER")]
+[assembly: AssemblyTitle("golden_manager")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GOLDEN_MANAGER")]
+[assembly: AssemblyProduct("golden_manager")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4fb8ad34-2e57-4d02-9561-61d4ee8146ae")]
+[assembly: Guid("d911b0ba-81bf-474a-8e92-bf7dad6c5fb0")]
 
 // Version information for an assembly consists of the following four values:
 //

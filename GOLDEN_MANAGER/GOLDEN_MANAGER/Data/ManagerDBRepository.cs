@@ -61,7 +61,7 @@ namespace GOLDEN_MANAGER.Data
                 storedItem.task_description = item.task_description;
                 storedItem.task_priority = item.task_priority;
                 storedItem.task_achiv_points = item.task_achiv_points;
-                storedItem.user_id = item.user_id;
+                storedItem.user = item.user;
 
                 context.SaveChanges();
                 return true;
@@ -113,7 +113,7 @@ namespace GOLDEN_MANAGER.Data
                 storedItem.bonus_name = item.bonus_name;
                 storedItem.bonus_description = item.bonus_description;
                 storedItem.bonus_points_must_achieve = item.bonus_points_must_achieve;
-                storedItem.user_id = item.user_id;
+                storedItem.user = item.user;
 
                 context.SaveChanges();
                 return true;
@@ -164,7 +164,7 @@ namespace GOLDEN_MANAGER.Data
                 storedItem.skill_id = item.skill_id;
                 storedItem.skill_name = item.skill_name;
                 storedItem.skill_lvl = item.skill_lvl;
-                storedItem.user_id = item.user_id;
+                storedItem.user = item.user;
                 storedItem.skill_points = item.skill_points;
 
                 context.SaveChanges();
@@ -217,7 +217,7 @@ namespace GOLDEN_MANAGER.Data
                 storedItem.note_name = item.note_name;
                 storedItem.note_description = item.note_description;
                 storedItem.note_priority = item.note_priority;
-                storedItem.user_id = item.user_id;
+                storedItem.user = item.user;
                 storedItem.group_notes_id = item.group_notes_id;
 
                 context.SaveChanges();
@@ -227,6 +227,69 @@ namespace GOLDEN_MANAGER.Data
             {
                 return false;
             }
+        }
+
+        #endregion
+
+        #region User
+
+        public User AddUser(User item)
+        {
+            context.Users.Add(item);
+            context.SaveChanges();
+            return item;
+        }
+
+        public User GetUserById(int user_id)
+        {
+            return context.Users.Where(r => r.user_id == user_id).FirstOrDefault();
+        }
+
+        public User GetUserByEmail(string user_email)
+        {
+            return context.Users.Where(r => r.user_email == user_email).FirstOrDefault();
+        }
+
+        #endregion
+
+        #region Days
+
+        public Day AddDay(Day item)
+        {
+            context.Days.Add(item);
+            context.SaveChanges();
+            return item;
+        }
+
+        public Day GetDayById(int day_id)
+        {
+            return context.Days.Where(r => r.day_id == day_id).FirstOrDefault();
+        }
+
+        public IEnumerable<Day> GetAllDays()
+        {
+            return context.Days;
+        }
+
+        #endregion
+
+        #region Motivation
+
+        public Motivation Addmotivation(Motivation item)
+        {
+            context.Motiations.Add(item);
+            context.SaveChanges();
+            return item;
+        }
+
+        public Motivation GetMotivationById(int mot_id)
+        {
+            return context.Motiations.Where(r => r.mot_id == mot_id).FirstOrDefault();
+        }
+
+        public IEnumerable<Motivation> GetAllMots()
+        {
+            return context.Motiations;
         }
 
         #endregion

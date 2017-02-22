@@ -1,71 +1,20 @@
-﻿
+﻿@using GOLDEN_MANAGER.Models
+@model string
+
 @{
     ViewBag.Title = "Main";
 }
 
 @section Scripts
-{
-}
+{}
 
 
 @section Body
 {
-    
-@Html.Partial("~/Views/ModalForms/_partialSkillCreateForm.cshtml")
-@Html.Partial("~/Views/ModalForms/_partialTaskCreateForm.cshtml")
-@Html.Partial("~/Views/ModalForms/_partialBonusCreateForm.cshtml")
-@Html.Partial("~/Views/ModalForms/_partialNoteCreateForm.cshtml")
-
  <div id="main_container">
-     <div class="head_container">
-         <span>hello</span>
-     </div>
-    <div class="horizontal_container">
-        <div id="right_content_container">right</div>
-        <div id="left_menu_container">
 
-            <div class="well well-sm menuItem">
-                @Ajax.ActionLink("Tasks", "GetTaskView", "Manager",
-                new AjaxOptions()
-                {
-                    UpdateTargetId = "right_content_container",
-                })
-            </div>
-
-            <div class="well well-sm menuItem">
-                @Ajax.ActionLink("Bonuses", "GetBonusView", "Manager",
-                new AjaxOptions()
-                {
-                    UpdateTargetId = "right_content_container",
-                })
-            </div>
-
-            <div class="well well-sm menuItem">
-                @Ajax.ActionLink("Notes", "GetNoteView", "Manager",
-                new AjaxOptions()
-                {
-                    UpdateTargetId = "right_content_container",
-                })
-            </div>
-
-            <div class="well well-sm menuItem">
-                @Ajax.ActionLink("Skills", "GetSkillView", "Manager",
-                new AjaxOptions()
-                {
-                    UpdateTargetId = "right_content_container",
-                })
-            </div>
-
-            <div class="well well-sm menuItem">
-                @Ajax.ActionLink("About", "GetAboutView", "Manager",
-                new AjaxOptions()
-                {
-                    UpdateTargetId = "right_content_container",
-                })
-            </div>
-
-        </div>
-    </div>
+     @Html.Partial("~/Views/ContentViews/_partialMainContainer.cshtml", @Model);
+     
 </div>
    
 }

@@ -1,0 +1,50 @@
+﻿@model GOLDEN_MANAGER.Models.User
+
+   <!-- Modal -->
+<div class="modal fade" id="loginUserModal" role="dialog">
+    <div class="modal-dialog">
+         
+<!-- Modal content-->
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Authorization</h4>            
+    </div>
+             
+      @using (Ajax.BeginForm("Authorization", "Manager",
+      new AjaxOptions
+      {
+          HttpMethod = "POST",
+          UpdateTargetId = "main_container"
+      }))
+      {
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label>Email:</label>
+                        @Html.TextBoxFor(x => x.user_email, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password:</label>
+                        @Html.PasswordFor(x => x.user_password, new { @class = "form-control" })
+                    </div>
+
+                </div>
+
+                   <div class="modal-footer">
+                       <input id = "closeLoginUserForm" type="submit" class="btn btn-primary" value="Login" />
+                   </div>
+               }
+           </div>
+       </div>
+   </div>
+  
+  
+<script type = "text/javascript" >
+    $("#closeLoginUserForm").click(function () {
+        $("#loginUserModal").modal().hide();
+        $('#loginUserModal').modal('toggle');
+});
+             
+</script>

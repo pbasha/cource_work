@@ -1,6 +1,5 @@
-﻿@using GOLDEN_MANAGER.Models
-@model Bonus
-  
+﻿@model GOLDEN_MANAGER.Models.Bonus
+
    <!-- Modal -->
 <div class="modal fade" id="addBonusModal" role="dialog">
     <div class="modal-dialog">
@@ -23,17 +22,17 @@
                     
                     <div class="form-group">
                         <label>Name:</label>
-                        @Html.EditorFor(x => x.bonus_name, new { @class = "form-control"})
+                        @Html.TextBoxFor(x => x.bonus_name, new { @class = "form-control"})
                     </div>
 
                     <div class="form-group">
                         <label>Description:</label>
-                        @Html.EditorFor(x => x.bonus_description, new { @class = "form-control" })
+                        @Html.TextBoxFor(x => x.bonus_description, new { @class = "form-control" })
                     </div>
 
                     <div class="form-group">
                         <label>Points needed:</label>
-                        @Html.EditorFor(x => x.bonus_points_must_achieve, new { @class = "form-control" })
+                        @Html.TextBoxFor(x => x.bonus_points_must_achieve, new { @class = "form-control" })
                     </div>
 
                 </div>

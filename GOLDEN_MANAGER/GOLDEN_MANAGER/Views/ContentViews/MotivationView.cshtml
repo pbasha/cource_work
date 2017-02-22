@@ -1,0 +1,47 @@
+﻿@using GOLDEN_MANAGER.Models
+@model IEnumerable<Motivation>
+
+
+<div class="right-container">
+    <div class="well well-lg my-well-container">
+
+        <button type="button" class="btn btn-primary my-left-btn my-string string-btn" data-toggle="modal" data-target="#addMotivationModal">I want to donate for motivation</button>
+
+        @foreach (var motItem in Model)
+        {
+            <div class="panel panel-primary my-panel-for-progress">
+                <div class="panel-heading my-string string-btn">@motItem.mot_name</div>
+                <div class="panel-body">
+                    
+                    @*<div class="horizontal_container">
+                        <div class="right my-string my-table-string">
+                            @motItem.task.task_name
+                        </div>
+                        <div class="left my-string my-table-string">
+                            Task Name:
+                        </div>
+                    </div>*@
+                    
+                    <div class="horizontal_container" style="margin-bottom: 10px">
+                        <div class="right my-string my-table-string">
+                            @motItem.mot_dead_line
+                        </div>
+                        <div class="left my-string my-table-string">
+                            Deadline:
+                        </div>
+                    </div>
+
+                    <div class="horizontal_container">
+                        <div class="right my-string my-table-string">
+                            @motItem.mot_cash
+                        </div>
+                        <div class="left my-string my-table-string">
+                            Donated cash:
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

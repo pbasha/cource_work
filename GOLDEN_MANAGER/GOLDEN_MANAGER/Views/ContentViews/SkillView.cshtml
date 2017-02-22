@@ -1,20 +1,28 @@
 ﻿@using GOLDEN_MANAGER.Models
 @model IEnumerable<Skill>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSkillModal">SKill</button>
 
-@foreach (var skillItem in Model)
-{
-        <div class="panel panel-primary">
-            <div class="panel-heading">@skillItem.skill_name</div>
-            <div class="panel-body">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active" role="progressbar"
-                         aria-valuenow=@skillItem.skill_points aria-valuemin="0" aria-valuemax="100" style="width:@skillItem.skill_points%">
-                        @skillItem.skill_points %
+<div class="right-container">
+    <div class="well well-lg my-well-container">
+
+        <button type="button" class="btn btn-primary my-left-btn my-string string-btn" data-toggle="modal" data-target="#addSkillModal">I want to train a new skill</button>
+
+
+        @foreach (var skillItem in Model)
+        {
+            <div class="panel panel-primary my-panel-for-progress">
+                <div class="panel-heading my-string string-btn">@skillItem.skill_name</div>
+                <div class="panel-body">
+                    <div class="progress" style="margin-top: 15px">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar"
+                             aria-valuenow=@skillItem.skill_points aria-valuemin="0" aria-valuemax="100" style="width:@skillItem.skill_points%">
+                            @skillItem.skill_points %
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-     </div>
-}
+        }
+
+    </div>
+</div>

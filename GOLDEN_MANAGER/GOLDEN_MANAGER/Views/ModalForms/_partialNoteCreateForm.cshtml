@@ -1,6 +1,5 @@
-﻿@using GOLDEN_MANAGER.Models
-@model Note
-  
+﻿@model GOLDEN_MANAGER.Models.Note 
+
    <!-- Modal -->
 <div class="modal fade" id="addNoteModal" role="dialog">
     <div class="modal-dialog">
@@ -23,17 +22,17 @@
                     
                     <div class="form-group">
                         <label>Name:</label>
-                        @Html.EditorFor(x => x.note_name, new { @class = "form-control"})
+                        @Html.TextBoxFor(x => x.note_name, new { @class = "form-control"})
                     </div>
 
                     <div class="form-group">
                         <label>Description:</label>
-                        @Html.EditorFor(x => x.note_description, new { @class = "form-control" })
+                        @Html.TextBoxFor(x => x.note_description, new { @class = "form-control" })
                     </div>
 
                     <div class="form-group">
                         <label>Priority:</label>
-                        @Html.EditorFor(x => x.note_priority, new { @class = "form-control" })
+                        @Html.TextBoxFor(x => x.note_priority, new { @class = "form-control" })
                     </div>
 
                 </div>

@@ -1,6 +1,5 @@
-﻿@using GOLDEN_MANAGER.Models
-@model Skill
-  
+﻿@model  GOLDEN_MANAGER.Models.Skill
+
    <!-- Modal -->
 <div class="modal fade" id="addSkillModal" role="dialog">
     <div class="modal-dialog">
@@ -23,7 +22,7 @@
                     
                     <div class="form-group">
                         <label>Name:</label>
-                        @Html.EditorFor(x => x.skill_name, new { @class = "form-control", @placeholder = "Enter the name of skill" })
+                        @Html.TextBoxFor(x => x.skill_name, new { @class = "form-control", @placeholder = "Enter the name of skill" })
                     </div>
 
                 </div>

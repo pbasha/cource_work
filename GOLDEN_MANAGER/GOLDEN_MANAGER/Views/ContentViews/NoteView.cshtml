@@ -2,29 +2,44 @@
 @using GOLDEN_MANAGER.Models
 @model IEnumerable<Note>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNoteModal">New Note</button>
+<div class="right-container">
+    <div class="well well-lg my-well-container">
+        <button type="button" class="btn btn-primary my-left-btn my-string string-btn" data-toggle="modal" data-target="#addNoteModal">Create a new note</button>
 
-<table class="table table-bordered table-tasks">
-    <thead>
-        <tr>
-            <th>Node ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Priority</th>
-            <th>Group</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        @foreach (var noteItem in Model)
+        @foreach (var noteitem in Model)
         {
-            <tr>
-                <td>@noteItem.note_id</td>
-                <td>@noteItem.note_name</td>
-                <td>@noteItem.note_description</td>
-                <td>@noteItem.note_priority</td>
-                <td>@noteItem.group_notes_id</td>
-            </tr>
+            <div class="panel panel-primary my-panel-for-progress">
+                <div class="panel-heading my-string string-btn">@noteitem.note_name</div>
+                <div class="panel-body">
+
+                    <div class="horizontal_container" style="margin-bottom: 10px">
+                        <div class="right my-string my-table-string">
+                            @noteitem.note_priority
+                        </div>
+                        <div class="left my-string my-table-string">
+                            Priority:
+                        </div>
+                    </div>
+
+                    <div class="horizontal_container" style="margin-bottom: 10px">
+                        <div class="right my-string my-table-string">
+                            @noteitem.noteGroup.np_id
+                        </div>
+                        <div class="left my-string my-table-string">
+                            Group:
+                        </div>
+                    </div>
+
+                    <div class="horizontal_container">
+                        <div class="right my-string my-table-string">
+                            @noteitem.note_description
+                        </div>
+                        <div class="left my-string my-table-string">
+                            Description:
+                        </div>
+                    </div>
+                </div>
+            </div>
         }
-    </tbody>
-</table>
+    </div>
+</div>

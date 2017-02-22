@@ -1,0 +1,88 @@
+﻿@using GOLDEN_MANAGER.Models
+@model string
+
+<div class="head_container"></div>
+<div class="horizontal_container">
+    <div id="right_content_container">
+        @{
+            if (Model != null)
+            {
+                @Html.Partial("~/Views/Shared/_partialWriteStringView.cshtml",
+                   String.Format("Wellcome, {0}", @Model));
+            }
+            else
+            {
+                @Html.Partial("~/Views/ContentViews/_partialNeedAuthView.cshtml");
+            }
+
+        }
+    </div>
+    <div id="left_menu_container">
+
+        <div class="well well-sm menuItem my-string string-btn">
+            @Ajax.ActionLink("Home", "GoToHomePage", "Manager",
+               new AjaxOptions()
+               {
+                   UpdateTargetId = "main_container",
+               })
+        </div>
+
+        <div class="well well-sm menuItem my-string string-btn">
+            @Ajax.ActionLink("Days", "GetDaysView", "Manager",
+                new AjaxOptions()
+                {
+                    UpdateTargetId = "right_content_container",
+                })
+        </div>
+
+        <div class="well well-sm menuItem my-string string-btn">
+            @Ajax.ActionLink("Tasks", "GetTaskView", "Manager",
+                new AjaxOptions()
+                {
+                    UpdateTargetId = "right_content_container",
+                })
+        </div>
+
+        <div class="well well-sm menuItem my-string string-btn">
+            @Ajax.ActionLink("Motivation", "GetMotivationView", "Manager",
+                new AjaxOptions()
+                {
+                    UpdateTargetId = "right_content_container",
+                })
+        </div>
+
+        <div class="well well-sm menuItem my-string string-btn">
+            @Ajax.ActionLink("Bonuses", "GetBonusView", "Manager",
+                new AjaxOptions()
+                {
+                    UpdateTargetId = "right_content_container",
+                })
+        </div>
+
+        <div class="well well-sm menuItem my-string string-btn">
+            @Ajax.ActionLink("Notes", "GetNoteView", "Manager",
+                new AjaxOptions()
+                {
+                    UpdateTargetId = "right_content_container",
+                })
+        </div>
+
+        <div class="well well-sm menuItem my-string string-btn">
+            @Ajax.ActionLink("Skills", "GetSkillView", "Manager",
+                new AjaxOptions()
+                {
+                    UpdateTargetId = "right_content_container",
+                })
+        </div>
+
+        <div class="well well-sm menuItem my-string string-btn">
+            @Ajax.ActionLink("About", "GetAboutView", "Manager",
+                new AjaxOptions()
+                {
+                    UpdateTargetId = "right_content_container",
+                })
+        </div>
+
+    </div>
+</div>
+

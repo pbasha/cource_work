@@ -1,29 +1,48 @@
 ﻿@using GOLDEN_MANAGER.Models
 @model IEnumerable<GOLDEN_MANAGER.Models.Task>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTaskModal">New Task</button>
-
-<table class="table table-bordered table-tasks">
-    <thead>
-        <tr>
-            <th>Task ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Priority</th>
-            <th>Points for achive</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="right-container">
+    <div class="well well-lg my-well-container">
+        
+        <button type="button" class="btn btn-primary my-left-btn my-string string-btn" data-toggle="modal" data-target="#addTaskModal">Add a new task</button>
+        <button type="button" class="btn btn-primary my-left-btn my-string string-btn" data-toggle="modal" data-target="#deleteTaskModal">Delete</button>
         
         @foreach (var taskItem in Model)
         {
-            <tr>
-                <td>@taskItem.task_id</td>
-                <td>@taskItem.task_name</td>
-                <td>@taskItem.task_description</td>
-                <td>@taskItem.task_priority</td>
-                <td>@taskItem.task_achiv_points</td>
-            </tr>
+            <div class="panel panel-primary my-panel-for-progress">
+                <div class="panel-heading my-string string-btn">@taskItem.task_name</div>
+                <div class="panel-body">
+
+                    <div class="horizontal_container" style="margin-bottom: 10px">
+                        <div class="right my-string my-table-string">
+                            @taskItem.task_priority
+                        </div>
+                        <div class="left my-string my-table-string">
+                            Priority:
+                        </div>
+                    </div>
+
+                    <div class="horizontal_container" style="margin-bottom: 10px">
+                        <div class="right my-string my-table-string">
+                            @taskItem.task_achiv_points
+                        </div>
+                        <div class="left my-string my-table-string">
+                            Points for achive:
+                        </div>
+                    </div>
+
+                    <div class="horizontal_container">
+                        <div class="right my-string my-table-string">
+                            @taskItem.task_description
+                        </div>
+                        <div class="left my-string my-table-string">
+                            Description:
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         }
-    </tbody>
-</table>
+
+    </div>
+</div>

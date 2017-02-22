@@ -1,6 +1,8 @@
 ﻿
 using GOLDEN_MANAGER.Data;
 using GOLDEN_MANAGER.Models;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace GOLDEN_MANAGER.Controllers
@@ -20,15 +22,20 @@ namespace GOLDEN_MANAGER.Controllers
 
         public ActionResult Add(Bonus bonus)
         {
-            if (bonus == null)
+            if (bonus == null || Request.Cookies["userId"] == null)
             {
-                ViewData["errorMessage"] = "Can't add the new bonus. Looks like it's empty..";
-                return View("ErrorView");
+                return PartialView("~/Views/Shared/_partialWriteStringView.cshtml",
+                   "Can't add the new bonus. Authorization needed.");
             }
+
+            bonus.user = repository.GetUserById(int.Parse(Request.Cookies["userId"].Value));
 
             repository.AddBonus(bonus);
 
-            return PartialView(@"~\Views\ContentViews\BonusView.cshtml", repository.GetAllBonuses());
+            IEnumerable<Bonus> bonuses = repository.GetAllBonuses()
+                .Where(x => x.user.user_id == bonus.user.user_id);
+
+            return PartialView(@"~\Views\ContentViews\BonusView.cshtml", bonuses);
         }
 
         #endregion

@@ -1,8 +1,13 @@
 ﻿
+body{
+    overflow:hidden;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background-image: url('images/image_653861207548185868003177993439794171.jpg');
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -14,33 +19,66 @@ textarea {
 
 #main_container {
     height: 50%;
-    border: 2px solid red;
+    overflow:hidden;
 }
 
 .horizontal_container {
     overflow: hidden;
 }
 
+.right{
+    float: right;
+}
+
+.left {
+   overflow: hidden; 
+}
+
 .head_container {
-    height:20vh;
+    height: 20vh;
+    border: none;
+    background-image: url('images/2.png');
+    background-position:center;
+    background-repeat: no-repeat;
 }
 
 #right_content_container {
     float: right;
-    border: 2px solid blue;
+    border: none;    
     width: 80%;
     height:80vh;
+    overflow: auto;
+    /*background-image: url('images/image_653861207548185868003177993439794171.jpg');
+    opacity: 0.4;*/
 }
+
 #left_menu_container {
-    overflow: hidden;
-    border: 2px solid green;
+    overflow: auto;
     width: 20%;
     height:80vh;
+}
+
+@font-face {
+    font-family: 'orange juice 2.0';
+    src: url('font/orange juice 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Beginning of Summer';
+    src: url('../fonts/Beginning of Summer.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TYPEWR_B';
+    src: url('font/TYPEWR_B.TTF') format('truetype');
 }
 
 .menuItem {
     /*list-style-type: none;*/
     background-color: rgba(132, 178, 250, 0.77);
+    /*font-family:'orange juice 2.0';
+    font-size: 20px;
+    color:rgb(2, 16, 177);*/
 
     margin-top: 7px;
     margin-left: 7px;
@@ -50,10 +88,12 @@ textarea {
 }
 
 .table-tasks {
-
     margin:15px;
+    margin-right:50px;
+    padding-right:30px;
     padding: 10px;
-
+    border: none;
+    border-right:none;
 }
 
 .registration-panel {
@@ -61,4 +101,43 @@ textarea {
     margin-top:10%;
     margin-left:35%;
     width: 400px;
+}
+
+/*.right-container {
+    margin-top:8px;
+    margin-right:10px;
+    height: 80%;
+}*/
+
+.my-well-container {
+    margin-top: 8px;
+    margin-right: 10px; 
+    height: 80%;
+    background-color: rgba(132, 178, 250, 0.77);
+}
+
+.my-left-btn {
+    margin-bottom: 20px;
+}
+
+.my-panel-for-progress{
+    color:aliceblue;
+}
+
+.my-string{
+    font-family:'orange juice 2.0';
+    color:rgb(2, 16, 177);
+}
+
+.my-table-string{
+    font-size: 20px;
+}
+
+.string-btn{
+    font-size: 20px;
+    color:#ffffff;
+}
+
+.string-big{
+    font-size: 30px;
 }

@@ -1,6 +1,4 @@
-﻿@using GOLDEN_MANAGER.Models
-@model GOLDEN_MANAGER.Models.Task
-  
+﻿@model GOLDEN_MANAGER.Models.Task  
    <!-- Modal -->
 <div class="modal fade" id="addTaskModal" role="dialog">
     <div class="modal-dialog">
@@ -22,23 +20,23 @@
                 <div class="modal-body">
                     
                     <div class="form-group">
-                        <label>Name:</label><br/>
-                        @Html.EditorFor(x => x.task_name, new { @class = "form-control", @placeholder = "Enter the name of skill" })
+                        <label>Name:</label>
+                        @Html.TextBoxFor(x => x.task_name, new { @class = "form-control", @placeholder = "Enter the name of task" })
                     </div>
 
                     <div class="form-group">
-                        <label>Prioriry:</label><br />
-                        @Html.EditorFor(x => x.task_priority, new { @class = "form-control" })
+                        <label>Prioriry:</label>
+                        @Html.TextBoxFor(x => x.task_priority, new { @class = "form-control" })
                     </div>
 
                     <div class="form-group">
-                        <label>Description:</label><br />
-                        @Html.EditorFor(x => x.task_description, new { @class = "form-control" })
+                        <label>Description:</label>
+                        @Html.TextBoxFor(x => x.task_description, new { @class = "form-control", @placeholder = "Enter the task description" })
                     </div>
 
                     <div class="form-group">
-                        <label>Point for completing:</label><br />
-                        @Html.EditorFor(x => x.task_achiv_points, new { @class = "form-control" })
+                        <label>Point for completing:</label>
+                        @Html.TextBoxFor(x => x.task_achiv_points, new { @class = "form-control" })
                     </div>
 
                 </div>

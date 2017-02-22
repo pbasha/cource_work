@@ -1,27 +1,36 @@
 ﻿@using GOLDEN_MANAGER.Models
 @model IEnumerable<Bonus>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addBonusModal">New Bonus</button>
+<div class="right-container">
+    <div class="well well-lg my-well-container">
 
-<table class="table table-bordered table-tasks">
-    <thead>
-        <tr>
-            <th>Bonus ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Points for achive</th>
-        </tr>
-    </thead>
-    <tbody>
+        <button type="button" class="btn btn-primary my-left-btn my-string string-btn" data-toggle="modal" data-target="#addBonusModal">Add a new bonus</button>
 
         @foreach (var bonusItem in Model)
         {
-            <tr>
-                <td>@bonusItem.bonus_id</td>
-                <td>@bonusItem.bonus_name</td>
-                <td>@bonusItem.bonus_description</td>
-                <td>@bonusItem.bonus_points_must_achieve</td>
-            </tr>
+            <div class="panel panel-primary my-panel-for-progress">
+                <div class="panel-heading my-string string-btn">@bonusItem.bonus_name</div>
+                <div class="panel-body">
+
+                    <div class="horizontal_container" style="margin-bottom: 10px">
+                        <div class="right my-string my-table-string">
+                            @bonusItem.bonus_points_must_achieve
+                        </div>
+                        <div class="left my-string my-table-string">
+                            Points to achive:
+                        </div>
+                    </div>
+
+                    <div class="horizontal_container">
+                        <div class="right my-string my-table-string">
+                            @bonusItem.bonus_description
+                        </div>
+                        <div class="left my-string my-table-string">
+                            Description:
+                        </div>
+                    </div>
+                </div>
+            </div>
         }
-    </tbody>
-</table>
+    </div>
+</div>
